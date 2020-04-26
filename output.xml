@@ -1,0 +1,1254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.8.2 on win32)" generated="20200423 11:52:33.837" rpa="false">
+<suite id="s1" name="Current Weather" source="D:\Testing\Practise\final task\current_weather.robot">
+<test id="s1-t1" name="Get cities and temperature">
+<kw name="Get City And Temp" library="weather">
+<assign>
+<var>${city}</var>
+<var>${temperature}</var>
+</assign>
+<msg timestamp="20200423 11:52:35.766" level="INFO">${city} = Kalāteh-ye Dowlat</msg>
+<msg timestamp="20200423 11:52:35.766" level="INFO">${temperature} = 26.0</msg>
+<status status="PASS" starttime="20200423 11:52:34.204" endtime="20200423 11:52:35.766"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${city}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20200423 11:52:35.767" level="INFO">Length is 17</msg>
+<msg timestamp="20200423 11:52:35.767" level="INFO">${length} = 17</msg>
+<status status="PASS" starttime="20200423 11:52:35.767" endtime="20200423 11:52:35.767"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
+<arguments>
+<arg>${length}==0</arg>
+<arg>Log</arg>
+<arg>City - ${city}. Temperature - ${temperature}!</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>City - ${city}. Temperature - ${temperature}!</arg>
+</arguments>
+<msg timestamp="20200423 11:52:35.768" level="INFO">City - Kalāteh-ye Dowlat. Temperature - 26.0!</msg>
+<status status="PASS" starttime="20200423 11:52:35.768" endtime="20200423 11:52:35.768"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:52:35.767" endtime="20200423 11:52:35.768"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${length}==0</arg>
+<arg>Fail</arg>
+<arg>No cities with temperature more than 25.0</arg>
+</arguments>
+<status status="PASS" starttime="20200423 11:52:35.768" endtime="20200423 11:52:35.769"></status>
+</kw>
+<doc>Выбираем города, в которых температура &gt; 25 градусов цельсия. Если есть хотя бы один - выводим его и его температуру в Log в формате City - {city_name}. Temperature - {temperature}, тест пройден. Если таких городов нет, тест не пройден и в Log сообщение об этом.</doc>
+<tags>
+<tag>city</tag>
+<tag>temperature</tag>
+</tags>
+<status status="PASS" starttime="20200423 11:52:34.203" endtime="20200423 11:52:35.769" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Get cities and day length">
+<kw name="Get Day Length" library="weather">
+<assign>
+<var>${city}</var>
+<var>${day_length}</var>
+</assign>
+<msg timestamp="20200423 11:52:36.668" level="INFO">${city} = Ḩeşār-e Sefīd</msg>
+<msg timestamp="20200423 11:52:36.668" level="INFO">${day_length} = 13:18:51</msg>
+<status status="PASS" starttime="20200423 11:52:35.772" endtime="20200423 11:52:36.668"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${city}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20200423 11:52:36.669" level="INFO">Length is 13</msg>
+<msg timestamp="20200423 11:52:36.669" level="INFO">${length} = 13</msg>
+<status status="PASS" starttime="20200423 11:52:36.669" endtime="20200423 11:52:36.669"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
+<arguments>
+<arg>${length}==0</arg>
+<arg>Log</arg>
+<arg>City - ${city}. Day Length - ${day_length}!</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>City - ${city}. Day Length - ${day_length}!</arg>
+</arguments>
+<msg timestamp="20200423 11:52:36.670" level="INFO">City - Ḩeşār-e Sefīd. Day Length - 13:18:51!</msg>
+<status status="PASS" starttime="20200423 11:52:36.670" endtime="20200423 11:52:36.670"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:52:36.669" endtime="20200423 11:52:36.670"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${length}==0</arg>
+<arg>Fail</arg>
+<arg>No cities with day light more than 12 hours</arg>
+</arguments>
+<status status="PASS" starttime="20200423 11:52:36.670" endtime="20200423 11:52:36.671"></status>
+</kw>
+<doc>Выбираем города, в которых световой день длится больше 12 часов. Если есть хотя бы один - выводим его и его продолжительность светового дня в Log в формате City - {city_name}. Day length - {day_length}, тест пройден. Если таких городов нет, тест не пройден и в Log сообщение об этом.</doc>
+<tags>
+<tag>city</tag>
+<tag>day</tag>
+</tags>
+<status status="PASS" starttime="20200423 11:52:35.771" endtime="20200423 11:52:36.671" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Get cities and conditions">
+<kw name="Get Wind And Visibility" library="weather">
+<assign>
+<var>${city}</var>
+</assign>
+<msg timestamp="20200423 11:52:37.561" level="INFO">${city} = Ḩeşār-e Sefīd</msg>
+<status status="PASS" starttime="20200423 11:52:36.674" endtime="20200423 11:52:37.561"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${city}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20200423 11:52:37.562" level="INFO">Length is 13</msg>
+<msg timestamp="20200423 11:52:37.562" level="INFO">${length} = 13</msg>
+<status status="PASS" starttime="20200423 11:52:37.561" endtime="20200423 11:52:37.562"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
+<arguments>
+<arg>${length}==0</arg>
+<arg>Log</arg>
+<arg>City - ${city}. Good conditions!</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>City - ${city}. Good conditions!</arg>
+</arguments>
+<msg timestamp="20200423 11:52:37.563" level="INFO">City - Ḩeşār-e Sefīd. Good conditions!</msg>
+<status status="PASS" starttime="20200423 11:52:37.562" endtime="20200423 11:52:37.563"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:52:37.562" endtime="20200423 11:52:37.563"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${length}==0</arg>
+<arg>Fail</arg>
+<arg>No cities with good condition</arg>
+</arguments>
+<status status="PASS" starttime="20200423 11:52:37.563" endtime="20200423 11:52:37.563"></status>
+</kw>
+<doc>Выбираем города, в которых скорость ветра &lt; 20 м/с и видимость &gt; 300 метров. Если есть хотя бы один - выводим его и сообщение о хороших погодных условиях в Log в формате City - {city_name}. Good conditions, тест пройден. Если таких городов нет, тест не пройден и в Log сообщение об этом.</doc>
+<tags>
+<tag>city</tag>
+<tag>visibility</tag>
+<tag>wind</tag>
+</tags>
+<status status="PASS" starttime="20200423 11:52:36.673" endtime="20200423 11:52:37.564" critical="yes"></status>
+</test>
+<test id="s1-t4" name="Get cities with snow">
+<kw name="Get Snow" library="weather">
+<assign>
+<var>${city}</var>
+</assign>
+<msg timestamp="20200423 11:53:01.299" level="INFO">${city} = []</msg>
+<status status="PASS" starttime="20200423 11:52:37.566" endtime="20200423 11:53:01.299"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${city}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20200423 11:53:01.300" level="INFO">Length is 0</msg>
+<msg timestamp="20200423 11:53:01.300" level="INFO">${length} = 0</msg>
+<status status="PASS" starttime="20200423 11:53:01.300" endtime="20200423 11:53:01.300"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
+<arguments>
+<arg>${length}==0</arg>
+<arg>Log</arg>
+<arg>City - ${city}. Snow!</arg>
+</arguments>
+<status status="PASS" starttime="20200423 11:53:01.301" endtime="20200423 11:53:01.301"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${length}==0</arg>
+<arg>Fail</arg>
+<arg>No cities with snow</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>No cities with snow</arg>
+</arguments>
+<msg timestamp="20200423 11:53:01.302" level="FAIL">No cities with snow</msg>
+<status status="FAIL" starttime="20200423 11:53:01.302" endtime="20200423 11:53:01.302"></status>
+</kw>
+<status status="FAIL" starttime="20200423 11:53:01.301" endtime="20200423 11:53:01.302"></status>
+</kw>
+<doc>Выбираем города, в которых идет снег на данный момент. Если есть хотя бы один - выводим его и сообщение о том, что там снег в Log в формате City - {city_name}. Snow!, тест пройден. Если таких городов нет, тест не пройден и в Log сообщение об этом.</doc>
+<tags>
+<tag>city</tag>
+<tag>snow</tag>
+</tags>
+<status status="FAIL" starttime="20200423 11:52:37.565" endtime="20200423 11:53:01.302" critical="yes">No cities with snow</status>
+</test>
+<test id="s1-t5" name="Get cities and humidity and pressure">
+<kw name="Get Pressure And Humidity" library="weather">
+<assign>
+<var>${city}</var>
+<var>${hum}</var>
+<var>${pres}</var>
+</assign>
+<msg timestamp="20200423 11:53:02.248" level="INFO">${city} = Ḩeşār-e Sefīd</msg>
+<msg timestamp="20200423 11:53:02.248" level="INFO">${hum} = 76</msg>
+<msg timestamp="20200423 11:53:02.248" level="INFO">${pres} = 1016</msg>
+<status status="PASS" starttime="20200423 11:53:01.309" endtime="20200423 11:53:02.248"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${city}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20200423 11:53:02.249" level="INFO">Length is 13</msg>
+<msg timestamp="20200423 11:53:02.249" level="INFO">${length} = 13</msg>
+<status status="PASS" starttime="20200423 11:53:02.249" endtime="20200423 11:53:02.249"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
+<arguments>
+<arg>${length}==0</arg>
+<arg>Log</arg>
+<arg>City - ${city}. Humidity - ${hum}. Pressure - ${pres}!</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>City - ${city}. Humidity - ${hum}. Pressure - ${pres}!</arg>
+</arguments>
+<msg timestamp="20200423 11:53:02.250" level="INFO">City - Ḩeşār-e Sefīd. Humidity - 76. Pressure - 1016!</msg>
+<status status="PASS" starttime="20200423 11:53:02.250" endtime="20200423 11:53:02.250"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:02.249" endtime="20200423 11:53:02.250"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${length}==0</arg>
+<arg>Fail</arg>
+<arg>No cities with day light more than 12 hours</arg>
+</arguments>
+<status status="PASS" starttime="20200423 11:53:02.250" endtime="20200423 11:53:02.251"></status>
+</kw>
+<doc>Выбираем города, в которых влажность больше 75% и давление больше 755 мм рт.ст. Если есть хотя бы один - выводим его, его влажность и давление в Log в формате City - {city_name}. Humidity - {humidity}, pressure - {pressure}, тест пройден. Если таких городов нет, тест не пройден и в Log сообщение об этом.</doc>
+<tags>
+<tag>city</tag>
+<tag>humidity</tag>
+<tag>pressure</tag>
+</tags>
+<status status="PASS" starttime="20200423 11:53:01.305" endtime="20200423 11:53:02.251" critical="yes"></status>
+</test>
+<test id="s1-t6" name="Get cities and clouds">
+<kw name="Get Clouds" library="weather">
+<assign>
+<var>${cities}</var>
+<var>${clouds}</var>
+<var>${dates}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.340" level="INFO">${cities} = Ḩeşār-e Sefīd</msg>
+<msg timestamp="20200423 11:53:03.340" level="INFO">${clouds} = [91, 93, 91, 100, 100, 92, 96, 100, 98, 92, 93, 97, 96, 91, 92]</msg>
+<msg timestamp="20200423 11:53:03.340" level="INFO">${dates} = ['2020-04-23', '2020-04-24', '2020-04-24', '2020-04-24', '2020-04-25', '2020-04-25', '2020-04-26', '2020-04-26', '2020-04-26', '2020-04-26', '2020-04-27', '2020-04-27', '2020-04-27', '2020-04-27', '20...</msg>
+<status status="PASS" starttime="20200423 11:53:02.254" endtime="20200423 11:53:03.340"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${cities}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.341" level="INFO">Length is 13</msg>
+<msg timestamp="20200423 11:53:03.341" level="INFO">${length} = 13</msg>
+<status status="PASS" starttime="20200423 11:53:03.341" endtime="20200423 11:53:03.341"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.341" level="INFO">${result} = {}</msg>
+<status status="PASS" starttime="20200423 11:53:03.341" endtime="20200423 11:53:03.342"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${clouds}</arg>
+</arguments>
+<assign>
+<var>${size}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.342" level="INFO">Length is 15</msg>
+<msg timestamp="20200423 11:53:03.342" level="INFO">${size} = 15</msg>
+<status status="PASS" starttime="20200423 11:53:03.342" endtime="20200423 11:53:03.342"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
+<arguments>
+<arg>${length}==0</arg>
+<arg>Log</arg>
+<arg>City - ${cities}</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>City - ${cities}</arg>
+</arguments>
+<msg timestamp="20200423 11:53:03.343" level="INFO">City - Ḩeşār-e Sefīd</msg>
+<status status="PASS" starttime="20200423 11:53:03.343" endtime="20200423 11:53:03.343"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:03.342" endtime="20200423 11:53:03.343"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
+<arguments>
+<arg>${length}==0</arg>
+<arg>Run Loop</arg>
+<arg>${size}</arg>
+<arg>${result}</arg>
+<arg>${dates}</arg>
+<arg>${clouds}</arg>
+</arguments>
+<kw name="Run Loop">
+<arguments>
+<arg>${size}</arg>
+<arg>${result}</arg>
+<arg>${dates}</arg>
+<arg>${clouds}</arg>
+</arguments>
+<kw name="${i} IN RANGE [ ${size} ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${keys}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${key}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.344" level="INFO">${key} = 2020-04-23</msg>
+<status status="PASS" starttime="20200423 11:53:03.344" endtime="20200423 11:53:03.344"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${values}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.345" level="INFO">${value} = 91</msg>
+<status status="PASS" starttime="20200423 11:53:03.344" endtime="20200423 11:53:03.345"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>${key}</arg>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 11:53:03.345" endtime="20200423 11:53:03.345"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:03.344" endtime="20200423 11:53:03.345"></status>
+</kw>
+<kw name="${i} = 1" type="foritem">
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${keys}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${key}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.345" level="INFO">${key} = 2020-04-24</msg>
+<status status="PASS" starttime="20200423 11:53:03.345" endtime="20200423 11:53:03.345"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${values}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.346" level="INFO">${value} = 93</msg>
+<status status="PASS" starttime="20200423 11:53:03.345" endtime="20200423 11:53:03.346"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>${key}</arg>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 11:53:03.346" endtime="20200423 11:53:03.346"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:03.345" endtime="20200423 11:53:03.346"></status>
+</kw>
+<kw name="${i} = 2" type="foritem">
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${keys}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${key}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.346" level="INFO">${key} = 2020-04-24</msg>
+<status status="PASS" starttime="20200423 11:53:03.346" endtime="20200423 11:53:03.346"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${values}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.347" level="INFO">${value} = 91</msg>
+<status status="PASS" starttime="20200423 11:53:03.346" endtime="20200423 11:53:03.347"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>${key}</arg>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 11:53:03.347" endtime="20200423 11:53:03.347"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:03.346" endtime="20200423 11:53:03.347"></status>
+</kw>
+<kw name="${i} = 3" type="foritem">
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${keys}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${key}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.347" level="INFO">${key} = 2020-04-24</msg>
+<status status="PASS" starttime="20200423 11:53:03.347" endtime="20200423 11:53:03.347"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${values}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.348" level="INFO">${value} = 100</msg>
+<status status="PASS" starttime="20200423 11:53:03.347" endtime="20200423 11:53:03.348"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>${key}</arg>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 11:53:03.348" endtime="20200423 11:53:03.348"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:03.347" endtime="20200423 11:53:03.348"></status>
+</kw>
+<kw name="${i} = 4" type="foritem">
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${keys}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${key}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.348" level="INFO">${key} = 2020-04-25</msg>
+<status status="PASS" starttime="20200423 11:53:03.348" endtime="20200423 11:53:03.348"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${values}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.348" level="INFO">${value} = 100</msg>
+<status status="PASS" starttime="20200423 11:53:03.348" endtime="20200423 11:53:03.349"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>${key}</arg>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 11:53:03.349" endtime="20200423 11:53:03.349"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:03.348" endtime="20200423 11:53:03.349"></status>
+</kw>
+<kw name="${i} = 5" type="foritem">
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${keys}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${key}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.349" level="INFO">${key} = 2020-04-25</msg>
+<status status="PASS" starttime="20200423 11:53:03.349" endtime="20200423 11:53:03.349"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${values}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.349" level="INFO">${value} = 92</msg>
+<status status="PASS" starttime="20200423 11:53:03.349" endtime="20200423 11:53:03.349"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>${key}</arg>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 11:53:03.350" endtime="20200423 11:53:03.350"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:03.349" endtime="20200423 11:53:03.350"></status>
+</kw>
+<kw name="${i} = 6" type="foritem">
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${keys}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${key}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.350" level="INFO">${key} = 2020-04-26</msg>
+<status status="PASS" starttime="20200423 11:53:03.350" endtime="20200423 11:53:03.350"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${values}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.350" level="INFO">${value} = 96</msg>
+<status status="PASS" starttime="20200423 11:53:03.350" endtime="20200423 11:53:03.350"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>${key}</arg>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 11:53:03.351" endtime="20200423 11:53:03.351"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:03.350" endtime="20200423 11:53:03.351"></status>
+</kw>
+<kw name="${i} = 7" type="foritem">
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${keys}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${key}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.351" level="INFO">${key} = 2020-04-26</msg>
+<status status="PASS" starttime="20200423 11:53:03.351" endtime="20200423 11:53:03.351"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${values}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.351" level="INFO">${value} = 100</msg>
+<status status="PASS" starttime="20200423 11:53:03.351" endtime="20200423 11:53:03.351"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>${key}</arg>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 11:53:03.352" endtime="20200423 11:53:03.352"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:03.351" endtime="20200423 11:53:03.352"></status>
+</kw>
+<kw name="${i} = 8" type="foritem">
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${keys}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${key}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.352" level="INFO">${key} = 2020-04-26</msg>
+<status status="PASS" starttime="20200423 11:53:03.352" endtime="20200423 11:53:03.352"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${values}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.352" level="INFO">${value} = 98</msg>
+<status status="PASS" starttime="20200423 11:53:03.352" endtime="20200423 11:53:03.352"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>${key}</arg>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 11:53:03.353" endtime="20200423 11:53:03.353"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:03.352" endtime="20200423 11:53:03.353"></status>
+</kw>
+<kw name="${i} = 9" type="foritem">
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${keys}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${key}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.353" level="INFO">${key} = 2020-04-26</msg>
+<status status="PASS" starttime="20200423 11:53:03.353" endtime="20200423 11:53:03.353"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${values}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.353" level="INFO">${value} = 92</msg>
+<status status="PASS" starttime="20200423 11:53:03.353" endtime="20200423 11:53:03.353"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>${key}</arg>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 11:53:03.353" endtime="20200423 11:53:03.354"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:03.353" endtime="20200423 11:53:03.354"></status>
+</kw>
+<kw name="${i} = 10" type="foritem">
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${keys}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${key}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.354" level="INFO">${key} = 2020-04-27</msg>
+<status status="PASS" starttime="20200423 11:53:03.354" endtime="20200423 11:53:03.354"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${values}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.354" level="INFO">${value} = 93</msg>
+<status status="PASS" starttime="20200423 11:53:03.354" endtime="20200423 11:53:03.354"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>${key}</arg>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 11:53:03.354" endtime="20200423 11:53:03.355"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:03.354" endtime="20200423 11:53:03.355"></status>
+</kw>
+<kw name="${i} = 11" type="foritem">
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${keys}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${key}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.355" level="INFO">${key} = 2020-04-27</msg>
+<status status="PASS" starttime="20200423 11:53:03.355" endtime="20200423 11:53:03.355"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${values}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.355" level="INFO">${value} = 97</msg>
+<status status="PASS" starttime="20200423 11:53:03.355" endtime="20200423 11:53:03.355"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>${key}</arg>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 11:53:03.355" endtime="20200423 11:53:03.356"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:03.355" endtime="20200423 11:53:03.356"></status>
+</kw>
+<kw name="${i} = 12" type="foritem">
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${keys}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${key}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.356" level="INFO">${key} = 2020-04-27</msg>
+<status status="PASS" starttime="20200423 11:53:03.356" endtime="20200423 11:53:03.356"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${values}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.356" level="INFO">${value} = 96</msg>
+<status status="PASS" starttime="20200423 11:53:03.356" endtime="20200423 11:53:03.356"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>${key}</arg>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 11:53:03.357" endtime="20200423 11:53:03.357"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:03.356" endtime="20200423 11:53:03.357"></status>
+</kw>
+<kw name="${i} = 13" type="foritem">
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${keys}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${key}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.357" level="INFO">${key} = 2020-04-27</msg>
+<status status="PASS" starttime="20200423 11:53:03.357" endtime="20200423 11:53:03.357"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${values}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.357" level="INFO">${value} = 91</msg>
+<status status="PASS" starttime="20200423 11:53:03.357" endtime="20200423 11:53:03.357"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>${key}</arg>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 11:53:03.357" endtime="20200423 11:53:03.358"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:03.357" endtime="20200423 11:53:03.358"></status>
+</kw>
+<kw name="${i} = 14" type="foritem">
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${keys}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${key}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.358" level="INFO">${key} = 2020-04-27</msg>
+<status status="PASS" starttime="20200423 11:53:03.358" endtime="20200423 11:53:03.358"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${values}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20200423 11:53:03.358" level="INFO">${value} = 92</msg>
+<status status="PASS" starttime="20200423 11:53:03.358" endtime="20200423 11:53:03.358"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>${key}</arg>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 11:53:03.358" endtime="20200423 11:53:03.359"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:03.358" endtime="20200423 11:53:03.359"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:03.344" endtime="20200423 11:53:03.359"></status>
+</kw>
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${result}</arg>
+</arguments>
+<msg timestamp="20200423 11:53:03.359" level="INFO">Dictionary size is 5 and it contains following items:
+2020-04-23: 91
+2020-04-24: 100
+2020-04-25: 92
+2020-04-26: 92
+2020-04-27: 92</msg>
+<status status="PASS" starttime="20200423 11:53:03.359" endtime="20200423 11:53:03.359"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:03.344" endtime="20200423 11:53:03.359"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:03.343" endtime="20200423 11:53:03.359"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${length}==0</arg>
+<arg>Fail</arg>
+<arg>No cities with clouds more than 90</arg>
+</arguments>
+<status status="PASS" starttime="20200423 11:53:03.360" endtime="20200423 11:53:03.360"></status>
+</kw>
+<doc>По каждому городу из списка получить прогноз погоды на ближайшие пять дней.Выбрать те города, в которых хотя бы в один из пяти дней облачность будет больше 90%. Если есть хотя бы один город, то вывести сообщение в лог в формате City - {city_name}. Clouds - {clouds_percent}, date - {clouds_date}. Тест считать пройденным.Если таких дней несколько, то необходимо каждый из них писать в лог с новой строки.Если таких городов нет, то вывести соответствующее сообщение в лог. Тест считать не пройденным.</doc>
+<tags>
+<tag>city</tag>
+<tag>clouds</tag>
+</tags>
+<status status="PASS" starttime="20200423 11:53:02.252" endtime="20200423 11:53:03.360" critical="yes"></status>
+</test>
+<test id="s1-t7" name="Get cities and rain">
+<kw name="Get Rain" library="weather">
+<assign>
+<var>${cities}</var>
+<var>${dates}</var>
+</assign>
+<msg timestamp="20200423 11:53:13.498" level="INFO">${cities} = Reẕāābād</msg>
+<msg timestamp="20200423 11:53:13.498" level="INFO">${dates} = ['2020-04-23']</msg>
+<status status="PASS" starttime="20200423 11:53:03.365" endtime="20200423 11:53:13.498"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${cities}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20200423 11:53:13.499" level="INFO">Length is 8</msg>
+<msg timestamp="20200423 11:53:13.499" level="INFO">${length} = 8</msg>
+<status status="PASS" starttime="20200423 11:53:13.499" endtime="20200423 11:53:13.499"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${dates}</arg>
+</arguments>
+<assign>
+<var>${size}</var>
+</assign>
+<msg timestamp="20200423 11:53:13.499" level="INFO">Length is 1</msg>
+<msg timestamp="20200423 11:53:13.500" level="INFO">${size} = 1</msg>
+<status status="PASS" starttime="20200423 11:53:13.499" endtime="20200423 11:53:13.500"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200423 11:53:13.500" level="INFO">${result} = {}</msg>
+<status status="PASS" starttime="20200423 11:53:13.500" endtime="20200423 11:53:13.500"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
+<arguments>
+<arg>${length}==0</arg>
+<arg>Log</arg>
+<arg>City - ${cities}</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>City - ${cities}</arg>
+</arguments>
+<msg timestamp="20200423 11:53:13.501" level="INFO">City - Reẕāābād</msg>
+<status status="PASS" starttime="20200423 11:53:13.501" endtime="20200423 11:53:13.501"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:13.501" endtime="20200423 11:53:13.501"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
+<arguments>
+<arg>${length}==0</arg>
+<arg>Run Second Loop</arg>
+<arg>${size}</arg>
+<arg>${result}</arg>
+<arg>${dates}</arg>
+</arguments>
+<kw name="Run Second Loop">
+<arguments>
+<arg>${size}</arg>
+<arg>${result}</arg>
+<arg>${dates}</arg>
+</arguments>
+<kw name="${i} IN RANGE [ ${size} ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${keys}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${key}</var>
+</assign>
+<msg timestamp="20200423 11:53:13.503" level="INFO">${key} = 2020-04-23</msg>
+<status status="PASS" starttime="20200423 11:53:13.502" endtime="20200423 11:53:13.503"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>${key}</arg>
+<arg>Heavy intensity rain</arg>
+</arguments>
+<status status="PASS" starttime="20200423 11:53:13.503" endtime="20200423 11:53:13.503"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:13.502" endtime="20200423 11:53:13.503"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:13.502" endtime="20200423 11:53:13.503"></status>
+</kw>
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${result}</arg>
+</arguments>
+<msg timestamp="20200423 11:53:13.503" level="INFO">Dictionary has one item:
+2020-04-23: Heavy intensity rain</msg>
+<status status="PASS" starttime="20200423 11:53:13.503" endtime="20200423 11:53:13.503"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:13.502" endtime="20200423 11:53:13.503"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:13.502" endtime="20200423 11:53:13.503"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
+<arguments>
+<arg>${length}==0</arg>
+<arg>Log Dictionary</arg>
+<arg>${result}</arg>
+</arguments>
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${result}</arg>
+</arguments>
+<msg timestamp="20200423 11:53:13.504" level="INFO">Dictionary has one item:
+2020-04-23: Heavy intensity rain</msg>
+<status status="PASS" starttime="20200423 11:53:13.504" endtime="20200423 11:53:13.504"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:13.504" endtime="20200423 11:53:13.504"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${length}==0</arg>
+<arg>Fail</arg>
+<arg>No cities with heavy intensity rain</arg>
+</arguments>
+<status status="PASS" starttime="20200423 11:53:13.505" endtime="20200423 11:53:13.505"></status>
+</kw>
+<doc>По каждому городу из списка получить прогноз погоды на ближайшие пять дней.Выбрать те города, в которых хотя бы в один из пяти дней погода будет отмечена как "Rain", а в описании будет значение"heavy intensity rain".Если есть хотя бы один город, то вывести сообщение в лог в формате City - {city_name}. Heavy intensity rain - {rain_date}. Тест считать пройденным.Если таких дней несколько, то необходимо каждый из них писать в лог с новой строки.Если таких городов нет, то вывести соответствующее сообщение в лог. Тест считать не пройденным.</doc>
+<tags>
+<tag>city</tag>
+<tag>rain</tag>
+</tags>
+<status status="PASS" starttime="20200423 11:53:03.363" endtime="20200423 11:53:13.505" critical="yes"></status>
+</test>
+<test id="s1-t8" name="Get temperature difference">
+<kw name="Get Temp Diff" library="weather">
+<assign>
+<var>${cities}</var>
+<var>${dates}</var>
+<var>${temp_diff}</var>
+</assign>
+<msg timestamp="20200423 11:53:15.143" level="INFO">11.229999999999999</msg>
+<msg timestamp="20200423 11:53:15.143" level="INFO">${cities} = ‘Arīqah</msg>
+<msg timestamp="20200423 11:53:15.143" level="INFO">${dates} = [' 09:00:0']</msg>
+<msg timestamp="20200423 11:53:15.143" level="INFO">${temp_diff} = [11]</msg>
+<status status="PASS" starttime="20200423 11:53:13.510" endtime="20200423 11:53:15.143"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${cities}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20200423 11:53:15.144" level="INFO">Length is 7</msg>
+<msg timestamp="20200423 11:53:15.144" level="INFO">${length} = 7</msg>
+<status status="PASS" starttime="20200423 11:53:15.143" endtime="20200423 11:53:15.144"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200423 11:53:15.144" level="INFO">${result} = {}</msg>
+<status status="PASS" starttime="20200423 11:53:15.144" endtime="20200423 11:53:15.144"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${dates}</arg>
+</arguments>
+<assign>
+<var>${size}</var>
+</assign>
+<msg timestamp="20200423 11:53:15.145" level="INFO">Length is 1</msg>
+<msg timestamp="20200423 11:53:15.145" level="INFO">${size} = 1</msg>
+<status status="PASS" starttime="20200423 11:53:15.145" endtime="20200423 11:53:15.145"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
+<arguments>
+<arg>${length}==0</arg>
+<arg>Log</arg>
+<arg>City - ${cities}</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>City - ${cities}</arg>
+</arguments>
+<msg timestamp="20200423 11:53:15.146" level="INFO">City - ‘Arīqah</msg>
+<status status="PASS" starttime="20200423 11:53:15.146" endtime="20200423 11:53:15.146"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:15.145" endtime="20200423 11:53:15.146"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
+<arguments>
+<arg>${length}==0</arg>
+<arg>Run Loop</arg>
+<arg>${size}</arg>
+<arg>${result}</arg>
+<arg>${dates}</arg>
+<arg>${temp_diff}</arg>
+</arguments>
+<kw name="Run Loop">
+<arguments>
+<arg>${size}</arg>
+<arg>${result}</arg>
+<arg>${dates}</arg>
+<arg>${temp_diff}</arg>
+</arguments>
+<kw name="${i} IN RANGE [ ${size} ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${keys}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${key}</var>
+</assign>
+<msg timestamp="20200423 11:53:15.147" level="INFO">${key} =  09:00:0</msg>
+<status status="PASS" starttime="20200423 11:53:15.147" endtime="20200423 11:53:15.147"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${values}</arg>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20200423 11:53:15.148" level="INFO">${value} = 11</msg>
+<status status="PASS" starttime="20200423 11:53:15.147" endtime="20200423 11:53:15.148"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>${key}</arg>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 11:53:15.148" endtime="20200423 11:53:15.148"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:15.147" endtime="20200423 11:53:15.148"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:15.147" endtime="20200423 11:53:15.148"></status>
+</kw>
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${result}</arg>
+</arguments>
+<msg timestamp="20200423 11:53:15.148" level="INFO">Dictionary has one item:
+ 09:00:0: 11</msg>
+<status status="PASS" starttime="20200423 11:53:15.148" endtime="20200423 11:53:15.148"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:15.147" endtime="20200423 11:53:15.148"></status>
+</kw>
+<status status="PASS" starttime="20200423 11:53:15.146" endtime="20200423 11:53:15.148"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${length}==0</arg>
+<arg>Fail</arg>
+<arg>No cities with temperature difference more than 10</arg>
+</arguments>
+<status status="PASS" starttime="20200423 11:53:15.149" endtime="20200423 11:53:15.149"></status>
+</kw>
+<doc>По каждому городу из списка получить прогноз погоды на ближайшие пять дней.Выбрать те города, в которых хотя бы в один из пяти дней разница температуры утром и в дневное время будет больше 10 градусов. Если есть хотя бы один город, то вывести сообщение в лог в формате City - {city_name}. Temperature difference - {difference}, date - {difference_day}. Тест считать пройденным. Если таких дней несколько, то необходимо каждый из них писать в лог с новой строки.Если таких городов нет, то вывести соответствующее сообщение в лог. Тест считать не пройденным.</doc>
+<tags>
+<tag>city</tag>
+<tag>temperature difference</tag>
+</tags>
+<status status="PASS" starttime="20200423 11:53:13.507" endtime="20200423 11:53:15.150" critical="yes"></status>
+</test>
+<status status="FAIL" starttime="20200423 11:52:33.838" endtime="20200423 11:53:15.152"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="1">Critical Tests</stat>
+<stat pass="7" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="7" fail="1">city</stat>
+<stat pass="1" fail="0">clouds</stat>
+<stat pass="1" fail="0">day</stat>
+<stat pass="1" fail="0">humidity</stat>
+<stat pass="1" fail="0">pressure</stat>
+<stat pass="1" fail="0">rain</stat>
+<stat pass="0" fail="1">snow</stat>
+<stat pass="1" fail="0">temperature</stat>
+<stat pass="1" fail="0">temperature difference</stat>
+<stat pass="1" fail="0">visibility</stat>
+<stat pass="1" fail="0">wind</stat>
+</tag>
+<suite>
+<stat pass="7" fail="1" id="s1" name="Current Weather">Current Weather</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
